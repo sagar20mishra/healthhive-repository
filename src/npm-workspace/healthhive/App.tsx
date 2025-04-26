@@ -21,8 +21,7 @@ const App = () => {
   };
 
   const handleSignIn = () => {
-    // Add sign-in logic here
-    console.log('Sign-In clicked with:', { email, password });
+    console.log('Sign-In clicked with :', { email, password });
   };
 
   return (
