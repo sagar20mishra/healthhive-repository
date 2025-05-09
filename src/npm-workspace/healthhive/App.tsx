@@ -7,11 +7,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 //screens
 import LoginScreen from './src/components/LoginScreen';
 import HomeScreen from './src/components/HomeScreen';
-import { SafeAreaView, StyleSheet, Text } from 'react-native';
+import SignUPScreen from './src/components/SignUPScreen';
 
 export type RootStackParamList = {
   Login: undefined;
   Home: undefined;
+  SignUp: undefined;
 }
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -22,6 +23,7 @@ const App = () => {
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="SignUp" component={SignUPScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -13,6 +13,8 @@ import {
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
 type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
+type PropsSignup = NativeStackScreenProps<RootStackParamList, 'SignUp'>;
+
 
 
 
@@ -60,6 +62,11 @@ const LoginScreen = ({ navigation }: Props) => {
         <TouchableOpacity style={styles.button} onPress={handleSignIn}>
           <Text style={styles.buttonText}>Sign In</Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+          <Text style={styles.signUpText}>
+           Don't have an account? <Text style={styles.signUpLink}>Sign Up</Text>
+         </Text>
+</TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -101,6 +108,15 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 16,
+    fontWeight: 'bold',
+  },
+  signUpText: {
+    marginTop: 20,
+    textAlign: 'center',
+    color: '#000', // Default text color
+  },
+  signUpLink: {
+    color: '#28a745', // Green theme color
     fontWeight: 'bold',
   },
 });
